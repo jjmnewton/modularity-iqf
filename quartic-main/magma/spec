@@ -1,0 +1,24 @@
+{
+  minred_extended.m
+  Verbose.m
+  isomorphisms
+  {
+    +isomorphisms.spec
+  }
+  reconstruction
+  {
+    +reconstruction.spec
+  }
+  invariants
+  {
+    +invariants.spec
+  }
+  toolbox
+  {
+    misc.m
+  }
+  twists
+  {
+    twists.m
+  }
+}
