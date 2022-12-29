@@ -1,0 +1,11 @@
+These files contain computations for the paper "On the modularity of elliptic curves over imaginary quadratic fields" by Ana Caraiani and James Newton.
+
+Magma files included:
+
+s3ns5.m
+ns3ons5.m
+ns3ns5-elliptic.m
+b3ns5.m
+ns3ob5.m
+
+They import code included in the folders hyperelliptic-main quartic-main and quadraticpoints-master, written by Reynald Lercier, Christophe Ritzenthaler, Jeroen Sijsling, Josha Box, Ekin Ozman and Samir Siksek.
