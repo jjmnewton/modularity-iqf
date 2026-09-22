@@ -1,4 +1,5 @@
 These files contain computations for the paper "On the modularity of elliptic curves over imaginary quadratic fields" by Ana Caraiani and James Newton.
+All files ran successfully with Magma V2.29-2 on 22-Sep-2026.
 
 Magma files included:
 
