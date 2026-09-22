@@ -53,12 +53,14 @@ MapDown := CanMap*Iso;
 /* Check that the places Q55P1, Q55P2 correspond to the points P_1, P_2 in Proposition 7.4.1 */
 K55<a> := QuadraticField(-55);
 K:= Ring(Parent(RepresentativePoint(Q55P1))); /* field of definition for Q55P1 */
-assert(IsIsomorphic(K,K55));
-assert([K55!Coord: Coord in Coordinates(MapDown(RepresentativePoint(Q55P1)))] eq [ 1/28*(a + 1), 1/56*(-a + 27), 1 ]);
+IsIsoK55, K55Iso := IsIsomorphic(K,K55);
+assert(IsIsoK55);
+assert([K55Iso(Coord): Coord in Coordinates(MapDown(RepresentativePoint(Q55P1)))] eq [ 1/28*(a + 1), 1/56*(-a + 27), 1 ]);
 
-K:= Ring(Parent(RepresentativePoint(Q55P2))); /* field of definition for Q55P2 */
-assert(IsIsomorphic(K,K55));
-assert([K55!Coord: Coord in Coordinates(MapDown(RepresentativePoint(Q55P2)))] eq [ 1/4*(-a + 3), 1/4*(3*a + 3), 1 ]);
+Ka:= Ring(Parent(RepresentativePoint(Q55P2))); /* field of definition for Q55P2 */
+IsIsoK55a, K55Isoa := IsIsomorphic(Ka,K55);
+assert(IsIsoK55a);
+assert([K55Isoa(Coord): Coord in Coordinates(MapDown(RepresentativePoint(Q55P2)))] eq [ 1/4*(-a + 3), 1/4*(3*a + 3), 1 ]);
 
 /* Compute order of J(F_p) for J = Jac(Xs3,ns5), p small prime of good reduction */
 primelist := [7,11,13];
@@ -139,4 +141,3 @@ knowntwo:=[Place(MapDown(RepresentativePoint(Q55P1))),Place(MapDown(Representati
 newtwo:= [pl : pl in pls2 | not quotMap(RepresentativePoint(pl)) in Xns3ns5(Rationals()) and Discriminant(Ring(Parent(RepresentativePoint(pl)))) lt 0];
 assert(knowntwo[1] eq newtwo[1] or knowntwo[1] eq newtwo[2]);
 assert(knowntwo[2] eq newtwo[1] or knowntwo[2] eq newtwo[2]);
-
