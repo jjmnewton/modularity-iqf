@@ -22,7 +22,7 @@ assert(#AutomorphismsOfHyperellipticCurve(Creg) eq 2);
 
 C,map2 := SimplifiedModel(Creg);
 
-/*The next command shows the Jacobian has rank 0 by computing the 2-Selmer group and comparing with the 2-torsion subgroup, and gives he full Mordell-Weil group*/
+/*The next command shows the Jacobian has rank 0 by computing the 2-Selmer group and comparing with the 2-torsion subgroup, and gives the full Mordell-Weil group*/
 MW,MWmap := MordellWeilGroupGenus2(Jacobian(C));
 MW;
 
@@ -31,6 +31,10 @@ F7:=FiniteField(7); C7 := ChangeRing(C,F7); J7 := Jacobian(C7);
 /* F_7 points of Jacobian are isomorphic to C_2 x C_20 */
 AbelianGroup(J7);
 
+/* Check points mod 13 */
+F13:=FiniteField(13); C13 := ChangeRing(C,F13); J13 := Jacobian(C13); 
+/* F_13 points of Jacobian are isomorphic to C_2 x C_90 */
+AbelianGroup(J13);
 
 D1 := MWmap(MW.1); D2 := MWmap(MW.2);
 IQFdivs:=[];
@@ -80,4 +84,3 @@ Prealtestconj := BigMapK(Ptestconj);
 Dtest := Divisor(Prealtest)+Divisor(Prealtestconj);
 assert(Dtest eq DivisorGroup(CK)!D1 or Dtest eq DivisorGroup(CK)!D2);
 /* Prealtest is one of the exceptional points in C. Comes from 8100.3-a2 https://www.lmfdb.org/EllipticCurve/2.0.11.1/8100.3/a/2 */
-
